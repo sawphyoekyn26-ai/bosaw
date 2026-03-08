@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOSAW MWD | Premium Digital Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #f59e0b, #ef4444); /* နာမည်သစ်အတွက် အရောင်ကို Gold & Red ဘက် နည်းနည်းပြောင်းပေးထားတယ် */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+        <h1 class="text-3xl font-black gradient-text tracking-tighter">BOSAW MWD</h1>
+        <div class="space-x-6 hidden md:block">
+            <a href="#" class="hover:text-yellow-400">Home</a>
+            <a href="#services" class="hover:text-yellow-400">Services</a>
+            <a href="#contact" class="bg-yellow-500 text-black font-bold px-5 py-2 rounded-full hover:bg-yellow-600 transition">Contact Now</a>
+        </div>
+    </nav>
+
+    <section class="text-center py-24 px-4">
+        <h2 class="text-5xl md:text-7xl font-black mb-6 uppercase">BOSAW <span class="gradient-text">MWD</span></h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+            VPN, Netflix, YouTube Premium နဲ့ အခြား Digital Software ဝန်ဆောင်မှုများကို Myawaddy ကနေ တစ်နိုင်ငံလုံးကို အမြန်ဆုံး ဝန်ဆောင်မှုပေးနေပါပြီ။
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#services" class="border-2 border-yellow-500 text-yellow-500 px-8 py-3 rounded-lg font-bold hover:bg-yellow-500 hover:text-black transition">ကြည့်ရှုရန်</a>
+            <a href="#contact" class="bg-yellow-500 text-black px-8 py-3 rounded-lg font-bold hover:scale-105 transition shadow-lg shadow-yellow-500/20">ချက်ချင်းဝယ်ယူရန်</a>
+        </div>
+    </section>
+
+    <section id="services" class="max-w-6xl mx-auto py-16 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-3xl hover:border-yellow-500/50 transition">
+                <i class="fas fa-bolt text-4xl text-yellow-500 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2">High-Speed VPN</h4>
+                <p class="text-gray-400 mb-4">Outline နဲ့ အခြား Premium VPN များကို Myawaddy connection အတိုင်း မြန်ဆန်စွာ သုံးနိုင်ဖို့ စီစဉ်ပေးပါတယ်။</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl hover:border-yellow-500/50 transition">
+                <i class="fas fa-crown text-4xl text-yellow-500 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2">Premium Accounts</h4>
+                <p class="text-gray-400 mb-4">Netflix, Spotify, Canva စတဲ့ Premium account တွေကို တစ်နေရာတည်းမှာ စုစည်းပေးထားပါတယ်။</p>
+            </div>
+            <div class="glass-card p-8 rounded-3xl hover:border-yellow-500/50 transition">
+                <i class="fas fa-headset text-4xl text-yellow-500 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2">24/7 Support</h4>
+                <p class="text-gray-400 mb-4">ဝယ်ယူပြီးရင်လည်း အဆင်မပြေတာရှိရင် အချိန်မရွေး လှမ်းမေးလို့ရတဲ့ Service ပေးပါတယ်။</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 text-center">
+        <h3 class="text-3xl font-bold mb-8">ကျွန်ုပ်တို့ကို ဆက်သွယ်ပါ</h3>
+        <div class="flex justify-center gap-6 mb-12">
+            <a href="#" class="bg-blue-600 w-14 h-14 flex items-center justify-center rounded-full hover:scale-110 transition"><i class="fab fa-facebook-f text-2xl"></i></a>
+            <a href="#" class="bg-sky-500 w-14 h-14 flex items-center justify-center rounded-full hover:scale-110 transition"><i class="fab fa-telegram-plane text-2xl"></i></a>
+        </div>
+        <div class="inline-flex items-center gap-4 bg-slate-800 px-6 py-3 rounded-2xl border border-slate-700">
+            <span class="text-gray-400">Accepted:</span>
+            <span class="font-bold text-yellow-500 italic">KBZPay / WaveMoney</span>
+        </div>
+    </section>
+
+    <footer class="p-10 border-t border-slate-800 text-center text-gray-600">
+        &copy; 2026 BOSAW MWD. All rights reserved.
+    </footer>
+
+</body>
+</html>
