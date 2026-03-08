@@ -13,90 +13,129 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        .notice-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 1));
+            border-left: 4px solid #f59e0b;
+        }
         .gradient-text {
             background: linear-gradient(90deg, #f59e0b, #ef4444);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Dropdown Logic */
+        .dropdown:hover .dropdown-menu { display: block; }
         html { scroll-behavior: smooth; }
-        /* Live Chat Button Style */
-        .live-chat-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
     </style>
 </head>
 <body class="font-sans">
 
-    <div class="live-chat-btn">
+    <div class="fixed bottom-5 right-5 z-50">
         <a href="https://fb.me/sawsunday26.com" target="_blank" class="bg-blue-600 p-4 rounded-full shadow-2xl flex items-center gap-2 hover:scale-110 transition border-2 border-white/20">
             <i class="fab fa-facebook-messenger text-2xl text-white"></i>
-            <span class="text-white font-bold text-sm hidden md:block">Live Chat</span>
         </a>
     </div>
 
     <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto border-b border-slate-800/50">
-        <h1 class="text-xl font-bold gradient-text">BOSAW MWD</h1> <div class="space-x-6 hidden md:block">
-            <a href="#" class="hover:text-yellow-400 transition text-sm">Home</a>
-            <a href="#services" class="hover:text-yellow-400 transition text-sm">Services</a>
-            <a href="https://t.me/sawsunday26" target="_blank" class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full text-sm hover:bg-yellow-600 transition">Telegram</a>
+        <h1 class="text-xl font-bold gradient-text tracking-tighter">BOSAW MWD</h1>
+        
+        <div class="flex items-center space-x-8">
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-yellow-400 transition text-sm text-gray-400 font-medium">Home</a>
+                
+                <div class="relative dropdown group cursor-pointer">
+                    <span class="hover:text-yellow-400 transition text-sm text-gray-400 font-medium flex items-center gap-1">
+                        Services <i class="fas fa-chevron-down text-[10px] group-hover:rotate-180 transition-transform"></i>
+                    </span>
+                    <div class="absolute left-0 mt-2 w-64 bg-slate-900 border border-slate-700 rounded-xl shadow-2xl hidden dropdown-menu overflow-hidden z-50">
+                        <div class="p-4 hover:bg-slate-800 transition border-b border-slate-800">
+                            <p class="text-yellow-500 font-bold text-sm">High-Speed VPN</p>
+                            <p class="text-gray-500 text-xs">Express & Outline 100GB Keys</p>
+                        </div>
+                        <div class="p-4 hover:bg-slate-800 transition border-b border-slate-800">
+                            <p class="text-yellow-500 font-bold text-sm">Premium Accounts</p>
+                            <p class="text-gray-500 text-xs">Netflix, Spotify, Canva & more</p>
+                        </div>
+                        <div class="p-4 hover:bg-slate-800 transition">
+                            <p class="text-yellow-500 font-bold text-sm">24/7 Support</p>
+                            <p class="text-gray-500 text-xs">Fast manual processing & support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#payment" class="hover:text-yellow-400 transition text-sm text-gray-400 font-medium">Payment</a>
+            </div>
+            <a href="https://t.me/sawsunday26" target="_blank" class="bg-yellow-500 text-black font-bold px-4 py-1.5 rounded-full text-xs hover:bg-yellow-600 transition">Contact</a>
         </div>
     </nav>
 
-    <section class="text-center py-20 px-4">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">BOSAW <span class="gradient-text">MWD</span></h2> <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
-            VPN, Netflix, YouTube, Spotify စတဲ့ Premium Account များကို ဈေးနှုန်းသက်သာစွာနဲ့ ဝယ်ယူလို့ရနေပါပြီခင်ဗျာ...
-        </p>
+    <section class="text-center py-16 px-4">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">BOSAW <span class="gradient-text">MWD</span></h2>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="#services" class="border-2 border-yellow-500 text-yellow-500 px-8 py-2 rounded-lg font-bold hover:bg-yellow-500 hover:text-black transition">ဝန်ဆောင်မှုများ</a>
-            <a href="https://fb.me/sawsunday26.com" target="_blank" class="bg-blue-600 text-white px-8 py-2 rounded-lg font-bold hover:scale-105 transition shadow-lg">Facebook မှာဝယ်မယ်</a>
+            <a href="https://fb.me/sawsunday26.com" target="_blank" class="bg-blue-600 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg flex items-center gap-2 text-sm">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a href="https://t.me/sawsunday26" target="_blank" class="bg-sky-500 text-white px-6 py-2.5 rounded-xl font-bold hover:bg-sky-600 transition shadow-lg flex items-center gap-2 text-sm">
+                <i class="fab fa-telegram-plane"></i> Telegram
+            </a>
         </div>
     </section>
 
-    <section id="services" class="max-w-6xl mx-auto py-16 px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-2xl hover:border-yellow-500/50 transition border border-slate-700">
-                <i class="fas fa-bolt text-3xl text-yellow-500 mb-4"></i>
-                <h4 class="text-lg font-bold mb-2">High-Speed VPN</h4>
-                <p class="text-gray-400 text-sm">Telegram Channel ကို Follow လုပ်ပြီး Express အနီကောင် တစ်လသုံးအကောင့် နှင့် Outline 100GB Key များ Free ရယူနိုင်ပါတယ်။</p>
+    <section class="max-w-4xl mx-auto px-4 py-10">
+        <div class="notice-card glass-card p-8 rounded-3xl relative overflow-hidden">
+            <div class="flex items-center gap-3 mb-6">
+                <i class="fas fa-exclamation-triangle text-yellow-500 text-2xl animate-pulse"></i>
+                <h3 class="text-2xl font-black text-white uppercase tracking-tighter">Important Notice</h3>
             </div>
-            <div class="glass-card p-8 rounded-2xl hover:border-yellow-500/50 transition border border-slate-700">
-                <i class="fas fa-crown text-3xl text-yellow-500 mb-4"></i>
-                <h4 class="text-lg font-bold mb-2">Premium Accounts</h4>
-                <p class="text-gray-400 text-sm">Netflix, Spotify, Canva စတဲ့ Premium account တွေကို တစ်နေရာတည်းမှာ စုစည်းပေးထားပါတယ်။</p>
+            
+            <div class="space-y-4 mb-8">
+                <p class="text-gray-300 leading-relaxed font-medium">
+                    Our working days are <span class="text-yellow-500 font-bold">Monday to Friday</span> only. 
+                    Saturday and Sunday are holidays. Orders are processed on working days only.
+                </p>
+                <p class="text-gray-300 leading-relaxed font-medium border-l-2 border-slate-700 pl-4 italic">
+                    Some payments are handled manually; please contact us via <span class="text-sky-400 font-bold underline">Telegram</span> after payment for faster processing.
+                </p>
             </div>
-            <div class="glass-card p-8 rounded-2xl hover:border-yellow-500/50 transition border border-slate-700">
-                <i class="fas fa-headset text-3xl text-yellow-500 mb-4"></i>
-                <h4 class="text-lg font-bold mb-2">24/7 Support</h4>
-                <p class="text-gray-400 text-sm">ဝယ်ယူပြီးရင်လည်း အဆင်မပြေတာရှိရင် အချိန်မရွေး လှမ်းမေးလို့ရတဲ့ Service ပေးပါတယ်။</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-700/50 pt-8 mt-8 text-sm">
+                <div class="flex flex-col gap-1">
+                    <span class="text-gray-500 uppercase text-[10px] font-black tracking-widest">Any Queries</span>
+                    <a href="https://t.me/sawsunday26" class="text-white font-bold hover:text-yellow-500 transition">Telegram</a>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <span class="text-gray-500 uppercase text-[10px] font-black tracking-widest">Refund/Withdraw</span>
+                    <span class="text-white font-bold hover:text-yellow-500 transition cursor-pointer">Submit a Ticket</span>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <span class="text-gray-500 uppercase text-[10px] font-black tracking-widest">Updates</span>
+                    <a href="https://t.me/sawphyoekyn_26" class="text-white font-bold hover:text-yellow-500 transition">@sawphyoekyn.26</a>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center text-gray-400 text-sm font-medium border-t border-slate-800 pt-6">
+                Thank you for choosing our server. We appreciate your trust and support! ❤️
             </div>
         </div>
     </section>
 
-    <section class="max-w-4xl mx-auto py-10 px-4 mb-16">
+    <section id="payment" class="max-w-4xl mx-auto py-10 px-4 mb-20">
         <div class="glass-card p-8 rounded-3xl border border-slate-700 text-center">
-            <h3 class="text-xl font-bold mb-6 text-yellow-500 uppercase tracking-widest">Payment Methods</h3>
+            <h3 class="text-xl font-bold mb-8 text-yellow-500 uppercase tracking-widest">Payment Methods</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                <div class="p-4 bg-slate-800/50 rounded-xl">
-                    <p class="text-blue-400 font-bold text-lg mb-1">KBZPay / WaveMoney</p>
-                    <p class="text-2xl font-black text-white tracking-wider">09-260731990</p>
+                <div class="p-6 bg-slate-800/40 rounded-2xl border border-slate-700/50">
+                    <p class="text-blue-400 font-bold text-sm mb-2 uppercase tracking-wide">KBZPay / WaveMoney</p>
+                    <p class="text-2xl font-black text-white tracking-widest">09-260731990</p>
                 </div>
-                <div class="p-4 bg-slate-800/50 rounded-xl">
-                    <p class="text-gray-400 text-sm mb-1 font-bold">Account Name</p>
-                    <p class="text-xl font-bold text-white uppercase">အောင်ပြည့်ဖြိုး</p>
+                <div class="p-6 bg-slate-800/40 rounded-2xl border border-slate-700/50">
+                    <p class="text-gray-500 text-xs mb-2 font-bold uppercase tracking-wide">Account Name</p>
+                    <p class="text-xl font-bold text-white uppercase tracking-tight">အောင်ပြည့်ဖြိုး</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="py-16 border-t border-slate-800 text-center">
-        <h4 class="font-bold mb-6 text-yellow-500">BOSAW MWD @ 2026</h4>
-        <div class="flex justify-center gap-4">
-            <a href="https://fb.me/sawsunday26.com" target="_blank" class="text-gray-400 hover:text-blue-500 transition text-2xl"><i class="fab fa-facebook"></i></a>
-            <a href="https://t.me/sawsunday26" target="_blank" class="text-gray-400 hover:text-sky-400 transition text-2xl"><i class="fab fa-telegram"></i></a>
-        </div>
+    <footer class="py-12 border-t border-slate-800 text-center">
+        <p class="text-xs text-gray-600 uppercase tracking-widest">&copy; 2026 BOSAW MWD. Digital Premium Services.</p>
     </footer>
 
 </body>
