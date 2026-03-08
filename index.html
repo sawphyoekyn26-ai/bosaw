@@ -7,38 +7,49 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #ffffff; color: #333; }
-        /* Purple Header Section */
+        body { background-color: #020617; color: #f1f5f9; } /* Dark background */
+        
+        /* Darker Header Section */
         .hero-bg {
-            background: linear-gradient(180deg, #1e1b4b 0%, #4c1d95 100%);
+            background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
             min-height: 350px;
         }
-        /* Notice Box Style */
+
+        /* Dark Notice Box Style */
         .notice-container {
-            border: 1px solid #fde68a;
-            border-radius: 8px;
-            background: #fff;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
             max-width: 900px;
             margin-top: -100px;
         }
+
         .footer-bg {
-            background-color: #ffffff;
-            border-top: 1px solid #eee;
+            background-color: #020617;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
+
         .bottom-bar {
             background-color: #000;
             color: #fff;
             font-size: 12px;
         }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 <body class="font-sans">
 
-    <div class="bg-white border-b border-gray-100 py-1 text-[11px] text-gray-500">
+    <div class="bg-slate-950 border-b border-white/5 py-1 text-[11px] text-gray-400">
         <div class="max-w-7xl mx-auto px-4 flex justify-start gap-4">
-            <span><i class="fab fa-facebook text-blue-600"></i> fb.me/sawsunday26.com</span>
-            <span><i class="fab fa-telegram text-sky-500"></i> @sawsunday26</span>
+            <span><i class="fab fa-facebook text-blue-500"></i> fb.me/sawsunday26.com</span>
+            <span><i class="fab fa-telegram text-sky-400"></i> @sawsunday26</span>
         </div>
     </div>
 
@@ -46,83 +57,83 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center mb-16">
                 <h1 class="text-3xl font-bold tracking-tighter flex items-center gap-2">
-                    <span class="text-blue-500">BOSAW</span><span class="text-red-500">MWD</span>
+                    <span class="text-yellow-500">BOSAW</span><span class="text-red-500">MWD</span>
                 </h1>
                 <nav class="hidden md:flex gap-6 text-sm font-medium">
-                    <a href="#" class="hover:text-gray-300">Home</a>
-                    <a href="#" class="hover:text-gray-300">Reseller Pricing</a>
-                    <a href="#" class="hover:text-gray-300">Registration</a>
-                    <a href="https://fb.me/sawsunday26.com" target="_blank" class="bg-yellow-500 text-black px-4 py-1.5 rounded text-xs font-bold">Login</a>
+                    <a href="#" class="hover:text-yellow-500 transition">Home</a>
+                    <a href="#" class="hover:text-yellow-500 transition">Reseller Pricing</a>
+                    <a href="#" class="hover:text-yellow-500 transition">Registration</a>
+                    <a href="https://fb.me/sawsunday26.com" target="_blank" class="bg-yellow-500 text-black px-4 py-1.5 rounded text-xs font-bold hover:bg-yellow-600 transition">Login</a>
                 </nav>
             </div>
             <h2 class="text-3xl md:text-4xl font-light mb-4">BOSAW MWD. An exciting place to grow your business!</h2>
-            <div class="w-12 h-0.5 bg-gray-500 mx-auto opacity-30"></div>
+            <div class="w-12 h-0.5 bg-yellow-500 mx-auto opacity-50"></div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 pb-20">
         <div class="notice-container mx-auto p-10 text-center">
-            <h3 class="text-orange-500 text-xl font-bold mb-6">⚠️ IMPORTANT NOTICE ⚠️</h3>
+            <h3 class="text-yellow-500 text-xl font-bold mb-6 tracking-widest">⚠️ IMPORTANT NOTICE ⚠️</h3>
             
-            <div class="text-gray-700 space-y-2 mb-8 text-lg">
-                <p>Our working days are <strong>Monday to Friday</strong> only.</p>
-                <p><strong>Saturday and Sunday are holidays.</strong> Orders are processed on working days only.</p>
-                <p>Some payments are handled <strong>manually</strong>; please contact us via <span class="text-green-600 font-bold">Facebook</span> after payment for faster processing.</p>
+            <div class="text-gray-300 space-y-3 mb-10 text-lg leading-relaxed">
+                <p>Our working days are <strong class="text-white underline">Monday to Friday</strong> only.</p>
+                <p><strong class="text-white">Saturday and Sunday are holidays.</strong> Orders are processed on working days only.</p>
+                <p>Some payments are handled <strong class="text-white">manually</strong>; please contact us via <span class="text-sky-400 font-bold underline">Facebook/Telegram</span> after payment for faster processing.</p>
             </div>
 
-            <div class="border-y border-gray-100 py-4 mb-8 flex flex-wrap justify-center gap-2 md:gap-6 text-sm text-gray-600">
-                <span>Any Queries: <a href="https://fb.me/sawsunday26.com" class="text-green-600 font-medium">Facebook</a></span>
-                <span class="hidden md:inline">|</span>
-                <span>Refund/Withdraw: <span class="text-orange-600 font-medium">Submit a Ticket</span></span>
-                <span class="hidden md:inline">|</span>
-                <span>Updates: <a href="https://t.me/sawsunday26" class="text-purple-600 font-medium">@sawsunday26</a></span>
+            <div class="border-y border-white/5 py-5 mb-10 flex flex-wrap justify-center gap-2 md:gap-8 text-sm text-gray-400">
+                <span>Any Queries: <a href="https://fb.me/sawsunday26.com" class="text-sky-400 font-medium hover:underline">Facebook</a></span>
+                <span class="hidden md:inline opacity-20">|</span>
+                <span>Refund/Withdraw: <span class="text-orange-500 font-medium cursor-pointer hover:underline">Submit a Ticket</span></span>
+                <span class="hidden md:inline opacity-20">|</span>
+                <span>Updates: <a href="https://t.me/sawsunday26" class="text-yellow-500 font-medium hover:underline">@sawsunday26</a></span>
             </div>
 
-            <div class="space-y-1 mb-8">
-                <p class="font-bold">PAYMENT: <span class="text-blue-600">KBZPay / WaveMoney</span></p>
-                <p class="font-bold">ACC NAME: <span class="uppercase">အောင်ပြည့်ဖြိုး</span></p>
-                <p class="text-2xl font-black tracking-widest text-gray-800">09-260731990</p>
+            <div class="bg-slate-900/50 p-6 rounded-2xl border border-white/5 mb-8">
+                <p class="font-bold text-sky-400 mb-2">PAYMENT: <span class="text-white">KBZPay / WaveMoney</span></p>
+                <p class="font-bold text-gray-400 mb-2">ACC NAME: <span class="text-white uppercase tracking-tight">အောင်ပြည့်ဖြိုး</span></p>
+                <p class="text-3xl font-black tracking-widest text-yellow-500">09-260731990</p>
             </div>
 
-            <p class="text-gray-500 text-sm italic border-t border-gray-50 pt-6">
-                Thank you for choosing <strong>BOSAW MWD Server</strong>. We appreciate your trust and support!
+            <p class="text-gray-500 text-sm italic border-t border-white/5 pt-8">
+                Thank you for choosing <strong class="text-gray-300">BOSAW MWD Server</strong>. We appreciate your trust and support! ❤️
             </p>
         </div>
     </main>
 
-    <footer class="footer-bg py-12 px-4">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer class="footer-bg py-16 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
             <div>
-                <h4 class="font-bold text-blue-800 border-b-2 border-blue-800 inline-block mb-4">BOSAW MWD INC.</h4>
-                <div class="flex gap-4 mt-4 text-gray-400">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-telegram"></i>
-                    <i class="fab fa-whatsapp"></i>
+                <h4 class="font-bold text-yellow-500 border-b-2 border-yellow-500 inline-block mb-6 uppercase tracking-wider text-sm">BOSAW MWD INC.</h4>
+                <div class="flex justify-center md:justify-start gap-6 text-gray-500 text-xl">
+                    <a href="#" class="hover:text-blue-500"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-sky-400"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="hover:text-green-500"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="text-xs text-gray-500 space-y-2">
-                <h4 class="font-bold text-gray-800">Useful Links</h4>
-                <p>Contact Us</p>
-                <p>Discount Offer</p>
-                <p>News & Update</p>
+            <div class="text-[13px] text-gray-500 space-y-3">
+                <h4 class="font-bold text-gray-300 uppercase">Useful Links</h4>
+                <p class="hover:text-yellow-500 cursor-pointer transition">Contact Us</p>
+                <p class="hover:text-yellow-500 cursor-pointer transition">Discount Offer</p>
+                <p class="hover:text-yellow-500 cursor-pointer transition">News & Update</p>
             </div>
-            <div class="text-xs text-gray-500 space-y-2">
-                <h4 class="font-bold text-gray-800">Subscribe</h4>
+            <div class="text-[13px] text-gray-500 space-y-3">
+                <h4 class="font-bold text-gray-300 uppercase">Subscribe</h4>
                 <p>Don't miss our future updates!</p>
-                <button class="bg-gray-100 px-4 py-2 mt-2 rounded">Newsletter</button>
+                <button class="bg-slate-800 text-gray-300 px-5 py-2 mt-2 rounded-lg border border-white/5 hover:bg-slate-700 transition">Newsletter</button>
             </div>
-            <div class="text-xs text-gray-500 space-y-2">
-                <h4 class="font-bold text-gray-800">Connect With Us</h4>
-                <p><i class="fab fa-facebook mr-2"></i> fb.me/sawsunday26.com</p>
-                <p><i class="fab fa-telegram mr-2"></i> @sawsunday26</p>
+            <div class="text-[13px] text-gray-500 space-y-3">
+                <h4 class="font-bold text-gray-300 uppercase">Connect With Us</h4>
+                <p><i class="fab fa-facebook mr-2 text-blue-500"></i> fb.me/sawsunday26.com</p>
+                <p><i class="fab fa-telegram mr-2 text-sky-400"></i> @sawsunday26</p>
             </div>
         </div>
     </footer>
 
-    <div class="bottom-bar py-3 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center gap-4">
-            <p>&copy; 2026 BOSAW MWD Inc. All right reserved</p>
-            <div class="flex gap-4 text-xl opacity-70">
+    <div class="bottom-bar py-4 px-4 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="opacity-50">&copy; 2026 BOSAW MWD Inc. All right reserved</p>
+            <div class="flex gap-6 text-2xl opacity-40">
                 <i class="fab fa-cc-visa"></i>
                 <i class="fab fa-cc-mastercard"></i>
                 <i class="fab fa-cc-paypal"></i>
