@@ -17,7 +17,7 @@
             min-height: 380px;
         }
 
-        /* Improved Horizontal Marquee */
+        /* Horizontal Marquee Styling */
         .marquee-container {
             background: #0f172a;
             border-bottom: 1px solid rgba(34, 211, 238, 0.2);
@@ -27,22 +27,22 @@
         }
         .marquee-content {
             display: inline-block;
-            animation: marquee-scroll 35s linear infinite;
+            animation: marquee-scroll 40s linear infinite;
         }
         .marquee-text {
             display: inline-block;
             font-size: 15px;
             font-weight: 500;
         }
-        /* ဖောင့်အရောင်များကို ရှင်းလင်းအောင် ပြောင်းထားသည် */
-        .color-1 { color: #22d3ee; } /* Cyan color */
-        .color-2 { color: #ffffff; margin-left: 100px; } /* White color with gap */
+        .color-cyan { color: #22d3ee; }
+        .color-white { color: #ffffff; margin-left: 100px; }
 
         @keyframes marquee-scroll {
             0% { transform: translateX(100vw); }
             100% { transform: translateX(-100%); }
         }
 
+        /* Notice Container */
         .notice-container {
             border: 1px solid rgba(245, 158, 11, 0.3);
             border-radius: 16px;
@@ -50,9 +50,15 @@
             backdrop-filter: blur(15px);
             max-width: 900px;
             margin-top: -100px;
+            position: relative;
+            z-index: 10;
         }
 
-        #serviceMenu { display: none; z-index: 100; }
+        /* Fixed Dropdown Menu Style */
+        #serviceMenu { 
+            display: none; 
+            z-index: 1000; /* Dropdown ကို အပေါ်ဆုံးမှာ ထားရန် */
+        }
         #serviceMenu.show { display: block; }
         .arrow-icon { transition: transform 0.3s; }
         .rotate { transform: rotate(180deg); }
@@ -69,10 +75,10 @@
 
     <div class="marquee-container">
         <div class="marquee-content">
-            <span class="marquee-text color-1">
+            <span class="marquee-text color-cyan">
                 Official Website များတွင်းတစ်နှစ်စာလျှင်ဈေးကြီးပေးဝယ်ရသော VPN Account များကို Official Version ဝယ်သုံးသည့် Connection အတိုင်း အသုံးပြုနိုင်သော Crack Account များကိုဈေးနှုန်းချိုသာစွာဝယ်ယူရရှိနိုင်ပါသည်။
             </span>
-            <span class="marquee-text color-2">
+            <span class="marquee-text color-white">
                 📢 ကြော်ငြာများထည့်သွင်းလိုပါက ဆက်သွယ်ရန် - 09-260731990 / 09652772228
             </span>
         </div>
@@ -84,8 +90,10 @@
                 <h1 class="text-3xl font-bold tracking-tighter">
                     <span class="text-yellow-500">BOSAW</span><span class="text-red-500">MWD</span>
                 </h1>
+                
                 <nav class="hidden md:flex gap-8 text-sm font-medium items-center">
-                    <a href="#" class="hover:text-yellow-400">Home</a>
+                    <a href="#" class="hover:text-yellow-400 transition">Home</a>
+                    
                     <div class="relative">
                         <button id="serviceBtn" class="flex items-center gap-2 hover:text-yellow-400 focus:outline-none bg-white/5 px-4 py-2 rounded-full border border-white/10 transition">
                             Services <i class="fas fa-chevron-down text-[8px] arrow-icon"></i>
@@ -97,6 +105,8 @@
                             <a href="#" class="block px-5 py-3 hover:bg-slate-800 transition text-xs text-red-400 font-bold">Not For Child</a>
                         </div>
                     </div>
+
+                    <a href="#" class="hover:text-yellow-400 transition">Registration</a>
                     <a href="https://fb.me/sawsunday26.com" target="_blank" class="bg-yellow-500 text-black px-6 py-2 rounded-full font-bold hover:bg-yellow-600 transition">Login</a>
                 </nav>
             </div>
@@ -138,6 +148,7 @@
             arrow.classList.toggle('rotate');
         });
 
+        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!btn.contains(e.target)) {
                 menu.classList.remove('show');
@@ -145,5 +156,6 @@
             }
         });
     </script>
+
 </body>
 </html>
