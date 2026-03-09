@@ -3,29 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saw Phyoe (MWD) | Official Server</title>
+    <title>BOSAW MWD | Official Server</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #020617; color: #f1f5f9; }
+        body { background-color: #020617; color: #f1f5f9; font-family: 'Segoe UI', Tahoma, sans-serif; overflow-x: hidden; }
+        
         .hero-bg {
-            background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
-            min-height: 350px;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.95)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            min-height: 380px;
         }
+
+        /* Improved Horizontal Marquee */
+        .marquee-container {
+            background: #0f172a;
+            border-bottom: 1px solid rgba(34, 211, 238, 0.2);
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee-scroll 35s linear infinite;
+        }
+        .marquee-text {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        /* ဖောင့်အရောင်များကို ရှင်းလင်းအောင် ပြောင်းထားသည် */
+        .color-1 { color: #22d3ee; } /* Cyan color */
+        .color-2 { color: #ffffff; margin-left: 100px; } /* White color with gap */
+
+        @keyframes marquee-scroll {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100%); }
+        }
+
         .notice-container {
             border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 12px;
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(15px);
             max-width: 900px;
             margin-top: -100px;
         }
-        /* Dropdown styling */
-        .dropdown:hover .dropdown-menu { display: block; }
-        .dropdown-menu { display: none; }
+
+        #serviceMenu { display: none; z-index: 100; }
+        #serviceMenu.show { display: block; }
+        .arrow-icon { transition: transform 0.3s; }
+        .rotate { transform: rotate(180deg); }
     </style>
 </head>
-<body class="font-sans">
+<body>
 
     <div class="bg-slate-950 border-b border-white/5 py-1 text-[11px] text-gray-400">
         <div class="max-w-7xl mx-auto px-4 flex justify-start gap-4">
@@ -34,70 +67,83 @@
         </div>
     </div>
 
-    <header class="hero-bg text-white text-center pt-10 pb-20">
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span class="marquee-text color-1">
+                Official Website များတွင်းတစ်နှစ်စာလျှင်ဈေးကြီးပေးဝယ်ရသော VPN Account များကို Official Version ဝယ်သုံးသည့် Connection အတိုင်း အသုံးပြုနိုင်သော Crack Account များကိုဈေးနှုန်းချိုသာစွာဝယ်ယူရရှိနိုင်ပါသည်။
+            </span>
+            <span class="marquee-text color-2">
+                📢 ကြော်ငြာများထည့်သွင်းလိုပါက ဆက်သွယ်ရန် - 09-260731990 / 09652772228
+            </span>
+        </div>
+    </div>
+
+    <header class="hero-bg text-white text-center pt-10 pb-24">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center mb-16">
-                <h1 class="text-3xl font-bold tracking-tighter flex items-center gap-2">
+                <h1 class="text-3xl font-bold tracking-tighter">
                     <span class="text-yellow-500">BOSAW</span><span class="text-red-500">MWD</span>
                 </h1>
-                <nav class="hidden md:flex gap-6 text-sm font-medium items-center">
-                    <a href="#" class="hover:text-yellow-500 transition">Home</a>
-                    
-                    <div class="relative dropdown group cursor-pointer">
-                        <span class="hover:text-yellow-500 transition flex items-center gap-1">
-                            Services <i class="fas fa-chevron-down text-[10px] group-hover:rotate-180 transition-transform"></i>
-                        </span>
-                        <div class="absolute left-0 mt-2 w-48 bg-slate-900 border border-white/10 rounded-lg shadow-2xl overflow-hidden z-50 text-left">
-                            <a href="#" class="block px-4 py-3 hover:bg-slate-800 transition text-xs border-b border-white/5">VPN Service</a>
-                            <a href="#" class="block px-4 py-3 hover:bg-slate-800 transition text-xs border-b border-white/5">Cloud Service</a>
-                            <a href="#" class="block px-4 py-3 hover:bg-slate-800 transition text-xs border-b border-white/5">Movie & Series</a>
-                            <a href="#" class="block px-4 py-3 hover:bg-slate-800 transition text-xs text-red-400">Not For Child</a>
+                <nav class="hidden md:flex gap-8 text-sm font-medium items-center">
+                    <a href="#" class="hover:text-yellow-400">Home</a>
+                    <div class="relative">
+                        <button id="serviceBtn" class="flex items-center gap-2 hover:text-yellow-400 focus:outline-none bg-white/5 px-4 py-2 rounded-full border border-white/10 transition">
+                            Services <i class="fas fa-chevron-down text-[8px] arrow-icon"></i>
+                        </button>
+                        <div id="serviceMenu" class="absolute left-0 mt-3 w-52 bg-slate-900 border border-white/10 rounded-xl shadow-2xl overflow-hidden">
+                            <a href="#" class="block px-5 py-3 hover:bg-slate-800 transition text-xs border-b border-white/5">VPN Service</a>
+                            <a href="#" class="block px-5 py-3 hover:bg-slate-800 transition text-xs border-b border-white/5">Cloud Service</a>
+                            <a href="#" class="block px-5 py-3 hover:bg-slate-800 transition text-xs border-b border-white/5">Movie & Series</a>
+                            <a href="#" class="block px-5 py-3 hover:bg-slate-800 transition text-xs text-red-400 font-bold">Not For Child</a>
                         </div>
                     </div>
-
-                    <a href="#" class="hover:text-yellow-500 transition">Registration</a>
-                    <a href="https://fb.me/sawsunday26.com" target="_blank" class="bg-yellow-500 text-black px-4 py-1.5 rounded text-xs font-bold hover:bg-yellow-600 transition">Login</a>
+                    <a href="https://fb.me/sawsunday26.com" target="_blank" class="bg-yellow-500 text-black px-6 py-2 rounded-full font-bold hover:bg-yellow-600 transition">Login</a>
                 </nav>
             </div>
-            <h2 class="text-3xl md:text-4xl font-light mb-4">BOSAW MWD. An exciting place to grow your business!</h2>
-            <div class="w-12 h-0.5 bg-yellow-500 mx-auto opacity-50"></div>
+            <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">BOSAW MWD SERVER</h2>
+            <p class="text-gray-300 text-lg font-light italic">"Premium Accounts at Low Cost"</p>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 pb-20">
-        <div class="notice-container mx-auto p-10 text-center shadow-2xl">
-            <h3 class="text-yellow-500 text-xl font-bold mb-8 tracking-widest uppercase">⚠️ အရေးကြီးသတိပေးချက် ⚠️</h3>
+    <main class="max-w-7xl mx-auto px-4 pb-24">
+        <div class="notice-container mx-auto p-12 text-center shadow-2xl">
+            <h3 class="text-yellow-500 text-2xl font-black mb-8 uppercase tracking-widest">⚠️ အရေးကြီးသတိပေးချက် ⚠️</h3>
             
-            <div class="text-gray-300 space-y-4 mb-10 text-lg leading-relaxed">
-                <p>ကျွန်ုပ်တို့၏ ဝန်ဆောင်မှုပေးသောရက်များမှာ <strong class="text-white">တနင်္လာနေ့မှ သောကြာနေ့အထိ</strong> သာ ဖြစ်ပါသည်။</p>
-                <p><strong class="text-white underline">စနေ နှင့် တနင်္ဂနွေနေ့များသည် ရုံးပိတ်ရက်များဖြစ်ပြီး</strong> အဝယ်အော်ဒါများသည် ရုံးပိတ်ရက်များတွင် အချိန်ကြန့်ကြာမှုရှိနိုင်ပါသည်။</p>
-                <p>ပိတ်ရက်များတွင်ငွေပို့ပြီး ၁နာရီအတွင်း<strong class="text-white">အကောင့်မရသေးပါက</strong>ပိုမိုမြန်ဆန်စေရန် <span class="text-sky-400 font-bold underline">Facebook သို့ Telegram</span> မှတစ်ဆင့် Admin များထံဆက်သွယ်ပေးပါရန်မေတ္တာရပ်ခံအပ်ပါသည်။</p>
+            <div class="text-gray-300 space-y-6 mb-12 text-lg leading-relaxed">
+                <p>ကျွန်ုပ်တို့၏ ဝန်ဆောင်မှုပေးသောရက်မှာ တနင်္လာနေ့မှ သောကြာနေ့အထိ သာ ဖြစ်ပါသည်။</p>
+                <p>စနေ နှင့် တနင်္ဂနွေနေ့များသည် ရုံးပိတ်ရက်များဖြစ်ပြီး အဝယ်အော်ဒါများသည် ရုံးပိတ်ရက်များတွင် အချိန်ကြန့်ကြာမှုရှိနိုင်ပါသည်။</p>
+                <p>ပိတ်ရက်များတွင်ငွေပို့ပြီး ၁နာရီအတွင်းအကောင့်မရသေးပါကပိုမိုမြန်ဆန်စေရန် Facebook သို့ Telegram မှတစ်ဆင့် Admin များထံဆက်သွယ်ပေးပါရန်မေတ္တာရပ်ခံအပ်ပါသည်။</p>
             </div>
 
-            <div class="bg-slate-900/50 p-6 rounded-2xl border border-white/5 mb-8">
-                <p class="font-bold text-sky-400 mb-2">PAYMENT: <span class="text-white">KBZPay / WaveMoney</span></p>
-                <p class="font-bold text-gray-400 mb-2">ACC NAME: <span class="text-white uppercase tracking-tight">အောင်ပြည့်ဖြိုး</span></p>
-                <p class="text-3xl font-black tracking-widest text-yellow-500 italic">09-260731990</p>
+            <div class="bg-slate-900/60 p-8 rounded-3xl border border-white/5 mb-8">
+                <p class="font-bold text-sky-400 mb-2 text-sm uppercase">KBZPay / WaveMoney</p>
+                <p class="font-bold text-gray-400 mb-3 text-sm uppercase">ACC NAME: အောင်ပြည့်ဖြိုး</p>
+                <p class="text-4xl font-black tracking-[0.15em] text-yellow-500 italic">09-260731990</p>
             </div>
-
-            <p class="text-gray-500 text-sm italic border-t border-white/5 pt-8">
-                BOSAW MWD Server ကို ရွေးချယ်ပေးတဲ့အတွက် ကျေးဇူးတင်ပါတယ်။ လူကြီးမင်းတို့ရဲ့ ယုံကြည်မှုနဲ့ အားပေးမှုကို အထူးတန်ဖိုးထားပါတယ်! ❤️
-            </p>
         </div>
     </main>
 
-    <footer class="bg-slate-950 py-16 px-4 border-t border-white/5">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
-            <div>
-                <h4 class="font-bold text-yellow-500 border-b-2 border-yellow-500 inline-block mb-6 uppercase tracking-wider text-xs">BOSAW MWD INC.</h4>
-            </div>
-            <div class="text-[13px] text-gray-500">
-                <h4 class="font-bold text-gray-300 uppercase mb-4">Connect With Us</h4>
-                <p><i class="fab fa-facebook mr-2 text-blue-500"></i> fb.me/sawsunday26.com</p>
-                <p><i class="fab fa-telegram mr-2 text-sky-400"></i> @sawsunday26</p>
-            </div>
-        </div>
+    <footer class="bg-slate-950 py-12 text-center border-t border-white/5 text-gray-600 text-[10px] tracking-[0.3em] uppercase">
+        &copy; 2026 BOSAW MWD Inc. All right reserved
     </footer>
 
+    <script>
+        const btn = document.getElementById('serviceBtn');
+        const menu = document.getElementById('serviceMenu');
+        const arrow = btn.querySelector('.arrow-icon');
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('show');
+            arrow.classList.toggle('rotate');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!btn.contains(e.target)) {
+                menu.classList.remove('show');
+                arrow.classList.remove('rotate');
+            }
+        });
+    </script>
 </body>
 </html>
